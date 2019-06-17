@@ -25,21 +25,47 @@ public class Controller implements Initializable {
 
 
 
+
+
     public void submitButtonClicked() {
 
-        int startAmount = startAmountSpinner.getValue();
-        int yearlyRate = yearlyRateSpinner.getValue();
-        int years = yearsSpinner.getValue();
+        int startAmount;
+        double yearlyRate;
+        int years;
+
+        startAmount = startAmountSpinner.getValue();
+        yearlyRate = yearlyRateSpinner.getValue();
+        years = yearsSpinner.getValue();
+
+
+        generateChart(startAmount, yearlyRate, years);
     }
 
 
 
 
-    public void generateChart(int startAmount, int yearlyRate, int years) {
+    public void generateChart(int startAmount, double yearlyRate, int years) {
 
 
         //https://www.thecalculatorsite.com/articles/finance/compound-interest-formula.php
+
+        double finalAmount = 0;
+        double rate = (yearlyRate / 100) + 1;
+
+        for(int i = 0; i < years; i++) {
+
+            if (i == 0) {
+                finalAmount = startAmount * rate;
+            } else {
+                finalAmount = finalAmount * rate;
+            }
+        }
+
+        System.out.println(finalAmount);
+
+       // return finalAmount;
 /*
+
 
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
 
