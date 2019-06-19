@@ -35,10 +35,10 @@
                 </Label>
                 <Label alignment="TOP_CENTER" text="Starting amount" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" />
                 <Label alignment="TOP_CENTER" text="Years" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
-                <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="38.0" prefWidth="132.0" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="38.0" prefWidth="132.0" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP" />
                 <Spinner fx:id="startAmountSpinner" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                     <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="0" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="10000000" min="0" />
                     </valueFactory>
                 </Spinner>
                 <Spinner fx:id="yearlyRateSpinner" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
@@ -51,16 +51,21 @@
                         <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="0" />
                     </valueFactory>
                 </Spinner>
+            <Label fx:id="finalAmountLabel" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </Label>
             </children>
         </GridPane>
     </left>
     <center>
         <LineChart fx:id="lineChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="595.0" title="Compound interest" BorderPane.alignment="CENTER">
             <xAxis>
-                <NumberAxis label="Amount" side="BOTTOM" />
+                <NumberAxis label="Years" side="BOTTOM" />
             </xAxis>
             <yAxis>
-                <NumberAxis label="Years" side="LEFT" />
+                <NumberAxis label="Amount" side="LEFT" />
             </yAxis>
         </LineChart>
     </center>
