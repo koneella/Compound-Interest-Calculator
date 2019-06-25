@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.SpinnerValueFactory.*?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -38,7 +38,7 @@
                 <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="38.0" prefWidth="132.0" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP" />
                 <Spinner fx:id="startAmountSpinner" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                     <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="10000000" min="0" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="10000000" min="0" amountToStepBy="100"/>
                     </valueFactory>
                 </Spinner>
                 <Spinner fx:id="yearlyRateSpinner" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
@@ -52,9 +52,9 @@
                     </valueFactory>
                 </Spinner>
             <Label fx:id="finalAmountLabel" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
-               <padding>
+               <GridPane.margin>
                   <Insets bottom="20.0" />
-               </padding>
+               </GridPane.margin>
             </Label>
             </children>
         </GridPane>
