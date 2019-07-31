@@ -1,7 +1,7 @@
 # Compound Interest Calculator
 Program to calculate and show compound interest from user inputs.
 
-![](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![](https://github.com/koneella/Compound-Interest-Calculator/blob/master/demo1.png)
 
 
 
