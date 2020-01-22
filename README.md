@@ -15,4 +15,6 @@ Windows 10 10.0
 
 JavaFX11
 
+Gluon Scene Builder
+
 Project SDK: 11.0.3
